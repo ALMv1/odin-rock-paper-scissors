@@ -40,8 +40,6 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-
-
 for (let i = 0; i < 5; i++) {
     const humanSelection = getHumanChoice();
     const computerSelection = getComputerChoice();
@@ -50,13 +48,13 @@ for (let i = 0; i < 5; i++) {
 
 console.log(`The final score is:`);
 console.log(`You: ${humanScore}. Computer: ${computerScore}.`);
-switch (humanScore) {
-    case 5:
-    case 4:
-    case 3:
-        console.log("congrats, You win!");
-        break;
-    default:
-        console.log("You lost! Try again!");
+if (humanScore > computerScore) {
+    console.log ("Congrats, You win!");
+}
+else if (humanScore === computerScore) {
+    console.log ("You tied!");
+}
+else {
+    console.log("You lost! Try again!");
 }
 
