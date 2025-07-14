@@ -26,7 +26,18 @@ function getHumanChoice() {
 }   
 
 function playRound(humanChoice, computerChoice){
-    if (humanChoice === "rock" && computerChoice == "")
+
+    console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`);
+
+    if (humanChoice === "rock" && computerChoice == "scissors") || (humanChoice === "paper" && computerChoice == "rock") || (humanChoice === "scissors" && computerChoice == "paper") {
+        console.log("You win this round!");
+        humanScore++;
+    } else if (humanChoice === "rock" && computerChoice == "rock") || (humanChoice === "paper" && computerChoice === "paper") || humanChoice === "scissors" && computerChoice === "scissors"){
+        console.log("You tied.");
+    } else {
+        console.log("You lost!");
+        computerScore++;
+    }
 }
 
 const humanChoice = getHumanChoice();
