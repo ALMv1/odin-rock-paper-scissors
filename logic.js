@@ -29,10 +29,10 @@ function playRound(humanChoice, computerChoice){
 
     console.log(`You chose ${humanChoice} and the computer chose ${computerChoice}!`);
 
-    if (humanChoice === "rock" && computerChoice == "scissors") || (humanChoice === "paper" && computerChoice == "rock") || (humanChoice === "scissors" && computerChoice == "paper") {
+    if ((humanChoice === "rock" && computerChoice == "scissors") || (humanChoice === "paper" && computerChoice == "rock") || (humanChoice === "scissors" && computerChoice == "paper")) {
         console.log("You win this round!");
         humanScore++;
-    } else if (humanChoice === "rock" && computerChoice == "rock") || (humanChoice === "paper" && computerChoice === "paper") || humanChoice === "scissors" && computerChoice === "scissors"){
+    } else if ((humanChoice === "rock" && computerChoice == "rock") || (humanChoice === "paper" && computerChoice === "paper") || (humanChoice === "scissors" && computerChoice === "scissors")){
         console.log("You tied.");
     } else {
         console.log("You lost!");
@@ -40,6 +40,8 @@ function playRound(humanChoice, computerChoice){
     }
 }
 
-const humanChoice = getHumanChoice();
-const computerChoice = getComputerChoice();
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
+
+playRound(humanSelection, computerSelection);
 
